@@ -24,6 +24,9 @@ export class PageTableComponent {
   approve = new EventEmitter<User>();
 
   @Output()
+  reject = new EventEmitter<User>();
+
+  @Output()
   unblock = new EventEmitter<User>();
 
   getFineToPay(order: Order) {

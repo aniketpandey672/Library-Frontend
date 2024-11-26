@@ -160,6 +160,13 @@ export class ApiService {
     });
   }
 
+  rejectRequest(userId: number) {
+    return this.http.get(this.baseUrl + 'RejectRequest', {
+      params: new HttpParams().append('userId', userId),
+      responseType: 'text',
+    });
+  }
+
   getOrders() {
     return this.http.get<any>(this.baseUrl + 'GetOrders').pipe(
       map((orders) => {

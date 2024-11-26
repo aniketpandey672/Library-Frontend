@@ -44,6 +44,17 @@
         </td>
     </ng-container>
 
+
+    <ng-container matColumnDef="reject">
+        <th mat-header-cell *matHeaderCellDef>Reject</th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="accent"
+                    (click)="this.reject.emit(element)">
+                Reject
+            </button>
+        </td>
+    </ng-container>
+
     <ng-container matColumnDef="mobileNumber">
         <th mat-header-cell *matHeaderCellDef> Mobile Number </th>
         <td mat-cell *matCellDef="let element">

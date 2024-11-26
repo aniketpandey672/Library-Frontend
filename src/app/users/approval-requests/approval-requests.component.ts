@@ -17,6 +17,7 @@ export class ApprovalRequestsComponent {
     'userType',
     'createdOn',
     'approve',
+    'reject'
   ];
   users: User[] = [];
 
@@ -39,6 +40,17 @@ export class ApprovalRequestsComponent {
         } else this.snackBar.open(`Not Approved`, 'OK');
       },
     });
+  }
+  reject(user: User) {
+    
+    this.apiService.rejectRequest(user.id).subscribe({
+      next: (res) => {
+        if (res === 'rejected') {
+          this.snackBar.open(`Rejected for ${user.id}`, 'OK');
+        } else this.snackBar.open(`User Rejected`, 'OK');
+      },
+    });
+
   }
 
 }

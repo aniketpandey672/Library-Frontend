@@ -5,5 +5,7 @@
 </mat-card>
 
 <page-table [columns]="columns" [dataSource]="users"
-            (approve)="approve($event)">
+            (approve)="approve($event)" (reject)="reject($event)">
 </page-table>
+
+   
