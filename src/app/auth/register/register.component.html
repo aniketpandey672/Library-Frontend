@@ -50,7 +50,7 @@
                 <mat-grid-tile colspan="2">
                     <mat-form-field color="accent">
                         <mat-label>Mobile Number</mat-label>
-                        <input matInput formControlName="mobileNumber" maxlength="10" (input)="restrictSpecialCharacters2($event)">
+                        <input matInput formControlName="mobileNumber" maxlength="10" (keydown)="restrictSpecialCharacters2($event)">
                         <!-- <mat-error>Field is required!</mat-error> -->
                         <div *ngIf="contact?.touched && contact?.invalid" class="text-danger">
                             <small *ngIf="contact?.hasError('required')">Phone number is required.</small>
